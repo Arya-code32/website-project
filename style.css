@@ -1,0 +1,478 @@
+/* Apply font and main page styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #0a1f44;
+    color: white;
+    cursor: url("images/cursor01.png"), auto; /* Custom cursor for entire website */
+}
+
+/* Barcelona logo size */
+.logo {
+    width: 240px;
+}
+
+/* Header styling with Barcelona themed gradient */
+header {
+    background-image: linear-gradient(to bottom right, red, rgb(0, 89, 255));
+    padding: 20px;
+    text-align: center;
+}
+
+/* Fade in animation for logo */
+header img {
+    animation: fadeIn 2s ease-in;
+}
+
+/* Animation effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Desktop navigation bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #004d98;
+}
+
+/* Navigation links */
+nav a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+/* Mobile menu container */
+.container {
+    display: none;
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    z-index: 1000;
+}
+
+/* Hide checkbox used for menu toggle */
+.menu-toggler {
+    display: none;
+}
+
+/* Mobile menu button */
+.menu-toggler-label {
+    display: inline-block;
+    background: #ffcc00;
+    color: black;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Mobile dropdown menu */
+.stagger-menu {
+    list-style: none;
+    padding: 10px;
+    margin-top: 10px;
+    background: #111;
+    border-radius: 8px;
+
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 180px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+/* Individual mobile menu items */
+.stagger-menu li {
+    margin: 10px 0;
+    opacity: 0;
+    transform: translateX(30px);
+
+    transition: 0.3s;
+}
+
+/* Mobile menu links */
+.stagger-menu li a {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+/* Hover effect for mobile menu links */
+.stagger-menu li a:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+/* Mobile menu text styling */
+.stagger-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Show animated menu items when menu is opened */
+.menu-toggler:checked~.stagger-menu li {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: calc(0.06s * var(--i));
+}
+
+/* Show mobile menu when checkbox is checked */
+.menu-toggler:checked~.stagger-menu {
+    display: block;
+}
+
+/* Main page content spacing */
+main {
+    padding: 20px;
+}
+
+/* Slightly darken images */
+main img {
+    filter: brightness(90%);
+}
+
+/* Main content box styling */
+.content-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 10px 30px 30px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+}
+
+/* Main page title */
+.content-section h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+
+/* Section headings */
+.content-section h2 {
+    margin-top: 25px;
+    font-size: 26px;
+    color: #ff4d4d;
+}
+
+/* Paragraph text styling */
+.content-section p {
+    line-height: 1.7;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Hover effect for headings */
+.content-section h2:hover {
+    color: #0089ce;
+    transition: 0.3s;
+}
+
+/* Reusable button styling */
+.btn {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    background-color: white;
+}
+
+/* Main website wrapper */
+.wrapper {
+    max-width: 1100px;
+    margin: 20px auto;
+    background-color: #000000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Section titles */
+.section-title {
+    text-align: center;
+    margin: 30px 0 10px;
+    letter-spacing: 2px;
+    color: #ffcc00;
+}
+
+/* Player gallery grid layout */
+.players {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Player card styling */
+.card {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Player images */
+.card img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Overlay information hidden by default */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+
+    padding: 20px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+/* Show overlay when hovering over player cards */
+.card:hover .overlay {
+    opacity: 1;
+}
+
+/* Zoom effect when hovering over cards */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #111;
+}
+
+/* HONOURS PAGE */
+
+/* Trophy section spacing */
+.trophy-section {
+    padding: 30px;
+}
+
+/* Trophy card layout */
+.trophy-card {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    background-color: #111;
+
+    margin-bottom: 30px;
+    padding: 20px;
+
+    border-radius: 15px;
+}
+
+/* Trophy image styling */
+.trophy-card img {
+    width: 20%;
+    height: auto;
+
+    filter: drop-shadow(0 0 10px gold);
+}
+
+/* Trophy heading color */
+.trophy-info h2 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+/* Trophy paragraph styling */
+.trophy-info p {
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+/* SCHEDULE PAGE */
+
+/* Schedule page title */
+.schedule-title {
+    text-align: center;
+    color: #ffcc00;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+/* Schedule container spacing */
+.schedule-container {
+    padding: 20px;
+}
+
+/* Match card layout */
+.match-card {
+    display: grid;
+    grid-template-columns: 180px 200px 1fr;
+    align-items: center;
+
+    background-color: white;
+    color: black;
+
+    padding: 20px;
+    margin-bottom: 20px;
+
+    border-left: 6px solid #a50044;
+    border-radius: 8px;
+}
+
+/* Match date heading */
+.match-date h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* Match time styling */
+.match-date p {
+    margin-top: 5px;
+    color: #7a1f4a;
+    font-size: 18px;
+}
+
+/* Competition heading */
+.competition h2 {
+    color: #e63946;
+    margin: 0;
+}
+
+/* Competition details */
+.competition p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Team layout inside match cards */
+.match-teams {
+    display: grid;
+    grid-template-columns: 1fr 50px 70px 50px 1fr;
+    align-items: center;
+
+    font-weight: bold;
+    font-size: 24px;
+
+    text-align: center;
+}
+
+/* Team logos */
+.match-teams img {
+    width: 45px;
+    height: 45px;
+}
+
+/* VS text styling */
+.vs {
+    color: #7a1f4a;
+}
+
+/* MOBILE MEDIA QUERY */
+@media (max-width: 768px) {
+
+    /* Show mobile menu */
+    .container {
+        display: block;
+    }
+
+    /* Hide desktop navigation */
+    nav {
+        display: none;
+    }
+
+    /* Change player gallery to 2 columns */
+    .players {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Reduce wrapper margin */
+    .wrapper {
+        margin: 10px;
+    }
+
+    /* Smaller headings for mobile */
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    /* Resize logo image */
+    header img {
+        width: 30%;
+    }
+
+    /* Stack trophy cards vertically */
+    .trophy-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Resize trophy images */
+    .trophy-card img {
+        width: 30%;
+    }
+
+    /* Stack schedule cards vertically */
+    .match-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* Remove fixed widths */
+    .match-date,
+    .competition {
+        width: auto;
+    }
+
+    /* Stack teams vertically */
+    .match-teams {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        font-size: 24px;
+    }
+
+    /* Center team logos */
+    .match-teams img {
+        width: 45px;
+        height: 45px;
+        margin: auto;
+    }
+
+    /* Smaller VS text */
+    .vs {
+        font-size: 16px;
+    }
+}
